@@ -172,7 +172,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2020/03/20/InstallKubuntu/" class="post-title-link" itemprop="url">教大家如何使用VMware安装Kubuntu系统</a>
+            <a href="/2020/03/20/InstallKubuntu/" class="post-title-link" itemprop="url">如何为vscode全局添加背景图片？</a>
         </h1>
 
         <div class="post-meta">
@@ -189,7 +189,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-22 06:41:23" itemprop="dateModified" datetime="2020-03-22T06:41:23+08:00">2020-03-22</time>
+                <time title="修改时间：2020-07-19 09:29:37" itemprop="dateModified" datetime="2020-07-19T09:29:37+08:00">2020-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -197,8 +197,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux</span>
+                  <a href="/categories/DIY/" itemprop="url" rel="index">
+                    <span itemprop="name">DIY</span>
                   </a>
                 </span>
             </span>
@@ -214,27 +214,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="获取Kbuntu-iso"><a href="#获取Kbuntu-iso" class="headerlink" title="获取Kbuntu.iso"></a>获取Kbuntu.iso</h1><p>如果你已经有了Kbuntu.iso或者其他系统，那就不用下载了，直接跳到<a href="#打开VMware">打开VMware</a></p>
-<h2 id="下载Kbuntu-iso"><a href="#下载Kbuntu-iso" class="headerlink" title="下载Kbuntu.iso"></a><label style="font-size:22px">下载Kbuntu.iso</label></h2><p><a href="https://mirrors.nju.edu.cn/ubuntu-cdimage/kubuntu/releases/18.04.4/release/" target="_blank" rel="noopener">点击下载Kbuntu</a><br>您正下载的Kbuntu是<label style="color:red">Kubuntu-18.04.4-desktop-amd64.iso</label><br>即64位的18.04 LTS版本的Kubuntu</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a><label style="font-size:22px">注意事项</label></h2><ol>
-<li>为什么我用浏览器下载很慢？<br>亲，这边建议您用迅雷下载！<del>迅雷给你打了多少钱</del></li>
-<li>为什么不下载官网的Kubuntu？<br>因为官网的用的是国外的服务器，到时候安装Kubuntu系统时就会很慢慢<del>~</del>！<br>您正下载的是南京大学开源站Kubuntu镜像源，到时候安装就不至于那么慢了！<br><a href="https://baike.baidu.com/item/%E9%95%9C%E5%83%8F%E7%BD%91%E7%AB%99" target="_blank" rel="noopener">点击了解镜像网站</a></li>
-<li>本教程是只针对Kubuntu的安装吗？<br>并不是，你可以直接跳到<a href="#打开VMware">打开VMware</a>来进行别的系统的安装！</li>
-<li>那有没有其他系统的下载链接？<br>有的！<a href="https://mirrors.nju.edu.cn/ubuntu-cdimage/kubuntu/" target="_blank" rel="noopener">点击查看其他版本的Kubuntu</a>，<a href="https://mirrors.nju.edu.cn/" target="_blank" rel="noopener">点击查看其他系统</a><br>这些也是南京大学开源站的镜像源。<br>当然还有其他镜像源网站：<a href="http://mirrors.163.com/" target="_blank" rel="noopener">网易开源镜像站</a>、<a href="http://mirrors.aliyun.com/" target="_blank" rel="noopener">阿里云</a>、<a href="https://blog.csdn.net/William234/article/details/59540151?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task" target="_blank" rel="noopener">更多镜像网站</a></li>
-</ol>
-<h1 id="打开VMware"><a href="#打开VMware" class="headerlink" title="打开VMware"></a>打开VMware</h1><p>本文的VMware是指Workstation Player！<br>如果你已经安装了VMware，那就跳到下一步</p>
-<h2 id="获取VMware"><a href="#获取VMware" class="headerlink" title="获取VMware"></a><label style="font-size:22px">获取VMware</label></h2><p><a href="https://download3.vmware.com/software/wkst/file/VMware-workstation-full-15.5.2-15785246.exe?HashKey=2d8a103c0a3640b999ef6f6e8eaa78eb&ext=.exe&params=%7B%22custnumber%22%3A%22dHBod3dAcHdkKg%3D%3D%22%2C%22sourcefilesize%22%3A%22541.97+MB%22%2C%22dlgcode%22%3A%22WKST-1552-WIN%22%2C%22languagecode%22%3A%22cn%22%2C%22source%22%3A%22DOWNLOADS%22%2C%22downloadtype%22%3A%22manual%22%2C%22eula%22%3A%22Y%22%2C%22downloaduuid%22%3A%226c00a994-1d7d-4ead-b04a-5311d8cd7026%22%2C%22purchased%22%3A%22N%22%2C%22dlgtype%22%3A%22Product+Binaries%22%2C%22productversion%22%3A%2215.5.2%22%2C%22productfamily%22%3A%22VMware+Workstation+Pro%22%7D&AuthKey=1584801927_75914aafe909c4f6f288cec3ace0fdd1&ext=.exe" target="_blank" rel="noopener">点击下载VMware</a><br>这里也建议使用迅雷下载，可能更快！<br>下载完后就安装，如果C盘位置不够就换个位置够的磁盘安装。<br>安装过程中那些选项都可以不用改。<br>安装完后，到如下图界面。</p>
-<p><img src="http://r.photo.store.qq.com/psc?/V13be8UT3znYBR/cXP39dXjFtymXNK2lOGnixhmBH4.nUsQOXeG3TaJ7rCJ0v3l4hb7SCwlNEHpP8piZJdUeDDv2m6ytZ9YChFXfHuDauk0MUbtmMDrR7uesxw!/r" alt="点击许可证"></p>
-<h2 id="激活VMware"><a href="#激活VMware" class="headerlink" title="激活VMware"></a><label style="font-size:22px">激活VMware</label></h2><p>点击许可证，复制下面的序列码<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CG392-4PX5J-H816Z-HYZNG-PQRG2</span><br></pre></td></tr></table></figure></p>
-<p>然后粘贴到框框中，点击输入，就算安装并激活了！<br><img src="http://r.photo.store.qq.com/psc?/V13be8UT3znYBR/cXP39dXjFtymXNK2lOGni83uWRZy.btXkhtE1yiNgs1dKdDXmhL9hikO9fNnIGYwfaiJe4xtO0WDdn1HvfEfX7qRNLlvN0.Nf1qmcmJ63iA!/r" alt="把序列码粘贴到框框中"><br>接着打开VMware吧！</p>
-<h2 id="注意事项-1"><a href="#注意事项-1" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li>如何获取其他版本的VMware？<br><a href="https://my.vmware.com/cn/web/vmware/downloads" target="_blank" rel="noopener">点击访问VMware官网下载列表</a><br>然后找到VMware Workstation Pro点击下载产品。<br>不过你得先注册一个账号才能下载</li>
-<li>为什么序列号激活失败？<br>可能官网限制了序列号的多次使用吧！<br>要么百度换个序列号或者找破解方法试试看，<br>要么去<a href="https://my.vmware.com/cn/web/vmware/downloads" target="_blank" rel="noopener">官网</a>下载VMware Workstation Player使用个人版。</li>
-<li>为什么不推荐使用VMware Workstation Player？<br>因为这是免费版，也就意味着功能的削减！</li>
-<li>我错过了许可界面怎么办？<br>不用担心，在软件里面也可以激活<br>点菜单栏的帮助，然后点输入许可证密钥就可以去激活了。</li>
-<li>我如何查看是否激活成功？<br>点菜单栏的帮助，然后点关于VMware Workstation，就可以看到激活信息啦！<br><label style="color:red"><label style="font-size:25px"></label></label></li>
-</ol>
-<h1 id="安装Kubuntu"><a href="#安装Kubuntu" class="headerlink" title="安装Kubuntu"></a>安装Kubuntu</h1><p><u>什么？你已经安装完了，那你点进来就算了，还看到了这里是为什么啥？</u></p>
+          <h1 id="打开css样式文件"><a href="#打开css样式文件" class="headerlink" title="打开css样式文件"></a>打开css样式文件</h1><p>以下为参照路径<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Microsoft\Microsoft VS Code\resources\app\out\vs\workbench\workbench.desktop.main.css</span><br></pre></td></tr></table></figure></p>
+<h1 id="复制代码"><a href="#复制代码" class="headerlink" title="复制代码"></a>复制代码</h1> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    background-image: url(&#39;D:\\图片\\公主连结\\镜华4K.png&#39;);&#x2F;&#x2F;一定要双斜杆哦</span><br><span class="line">    background-size:100%;</span><br><span class="line">    opacity:0.85;</span><br><span class="line">    background-repeat:no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="粘贴代码"><a href="#粘贴代码" class="headerlink" title="粘贴代码"></a>粘贴代码</h1><p>粘贴代码到workbench.desktop.main.css文件中如图位置<br><img src="http://m.qpic.cn/psc?/V13be8UT3znYBR/UGewEcUieSobjMeKhf9dIHqt91y2DKBawEgazTDdHKUl0GE26fbi8qRHs4HCPbYIREY44svJ5uyMjBAIKqsHtw!!/b&bo=gAc4BIAHOAQDCSw!&rf=viewer_4" alt="代码位置"></p>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>1.图片的路径要使用双反斜杠<br>2.如果是用记事本打开的workbench.desktop.main.css，会发现比图中的代码多出好多代码，请拉到文本最后添加。<br>3.图中的<del>WW</del>是vs2019里的双反斜杠，请放心食用</p>
 
       
     </div>
