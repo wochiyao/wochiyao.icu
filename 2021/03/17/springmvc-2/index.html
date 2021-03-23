@@ -4,7 +4,7 @@
   <!-- 元数据 -->
   <meta charset="utf-8">
   <link rel="icon" href="">
-  <title>如何为vscode全局添加背景图片？ | Nayuki</title>
+  <title>springmvc基础（2） | Nayuki</title>
   <meta name="author" content="Nayuki" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -15,16 +15,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="本方法针对插件不生效的人，缺点是文字也会随透明度而改变。">
+  <meta name="description" content="RequestParam的使用 用于请求参数名和方法参数名不一样时  1public ModelAndView doNayuki(@RequestParam(&quot;rname&quot;) String name,@RequestParam(&quot;rage&quot;) Integer age)&amp;#123;&amp;#125;  required属性  1public ModelAndView">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何为vscode全局添加背景图片？">
-<meta property="og:url" content="https://wochiyao.github.io/2021/01/26/vscodebackground/index.html">
+<meta property="og:title" content="springmvc基础（2）">
+<meta property="og:url" content="https://wochiyao.github.io/2021/03/17/springmvc-2/index.html">
 <meta property="og:site_name" content="Nayuki">
-<meta property="og:description" content="本方法针对插件不生效的人，缺点是文字也会随透明度而改变。">
+<meta property="og:description" content="RequestParam的使用 用于请求参数名和方法参数名不一样时  1public ModelAndView doNayuki(@RequestParam(&quot;rname&quot;) String name,@RequestParam(&quot;rage&quot;) Integer age)&amp;#123;&amp;#125;  required属性  1public ModelAndView">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wochiyao.github.io/null">
-<meta property="article:published_time" content="2021-01-26T06:25:07.070Z">
-<meta property="article:modified_time" content="2021-01-26T07:46:43.164Z">
+<meta property="article:published_time" content="2021-03-17T02:43:59.386Z">
+<meta property="article:modified_time" content="2021-03-17T03:06:43.349Z">
 <meta property="article:author" content="Nayuki">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wochiyao.github.io/null">
@@ -111,17 +111,17 @@
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">如何为vscode全局添加背景图片？</h1>
+                <h1 class="kratos-entry-title text-center">springmvc基础（2）</h1>
                 
                 <div class="kratos-post-meta text-center">
                     <span>
-                        <i class="fa fa-calendar"></i> 2021-01-26
-                        <i class="fa fa-folder"></i> 分类 <a class="label-link" href="/categories/DIY/">DIY</a>
+                        <i class="fa fa-calendar"></i> 2021-03-17
+                        <i class="fa fa-folder"></i> 分类 <a class="label-link" href="/categories/springmvc/">springmvc</a>
                         <i class="fa fa-user"></i> 作者 Nayuki
                         <i class="fa fa-edit"></i> 
                         
                         
-                            471
+                            1033
                         
                         字
                         
@@ -130,16 +130,46 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1611647203164"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1615950403349"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
-                <p>本方法针对插件不生效的人，缺点是文字也会随透明度而改变。</p>
-<a id="more"></a>
-<h1 id="打开css样式文件"><a href="#打开css样式文件" class="headerlink" title="打开css样式文件"></a>打开css样式文件</h1><p>以下为参照路径<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\Microsoft\Microsoft VS Code\resources\app\out\vs\workbench\workbench.desktop.main.css</span><br></pre></td></tr></table></figure></p>
-<h1 id="复制代码"><a href="#复制代码" class="headerlink" title="复制代码"></a>复制代码</h1> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    background-image: url(&#39;D:\\图片\\公主连结\\镜华4K.png&#39;);&#x2F;&#x2F;一定要双斜杆哦</span><br><span class="line">    background-size:100%;</span><br><span class="line">    opacity:0.85;</span><br><span class="line">    background-repeat:no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="粘贴代码"><a href="#粘贴代码" class="headerlink" title="粘贴代码"></a>粘贴代码</h1><p>粘贴代码到workbench.desktop.main.css文件中如图位置<br><img src="http://r.photo.store.qq.com/psc?/V50zM3Py4H6NdQ1P4QA43Fduc14aPRH7/TmEUgtj9EK6.7V8ajmQrEI1pf2YOoBFr0YnZzWtYqAfZkIk8ANd8Fi.FYkY2wKbxe07ma5KaVrYPyEgp5d9LQhMuIgekLbkI7lzw6NNUe5Y!/r" alt="代码位置"></p>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><p>1.图片的路径要使用双反斜杠<br>2.如果是用记事本打开的workbench.desktop.main.css，会发现比图中的代码多出好多代码，请拉到文本最后添加。<br>3.图中的<del>WW</del>是vs2019里的双反斜杠，请放心食用</p>
+                <h2 id="RequestParam的使用"><a href="#RequestParam的使用" class="headerlink" title="RequestParam的使用"></a>RequestParam的使用</h2><ul>
+<li>用于请求参数名和方法参数名不一样时</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doNayuki</span><span class="params">(<span class="meta">@RequestParam(&quot;rname&quot;)</span> String name,<span class="meta">@RequestParam(&quot;rage&quot;)</span> Integer age)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>required属性</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doNayuki</span><span class="params">(<span class="meta">@RequestParam(value= &quot;rname&quot;,required= true)</span> String name,<span class="meta">@RequestParam(value=&quot;rage&quot;,required = true)</span> Integer age)</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="对象参数接收"><a href="#对象参数接收" class="headerlink" title="对象参数接收"></a>对象参数接收</h2><ul>
+<li>创建Student类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    String age;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getAge</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(String age)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改接收方式</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ModelAndView <span class="title">doNayuki</span><span class="params">(Student student)</span></span>&#123;</span><br><span class="line">    System.out.printf(student.getName()+student.getAge());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><ul>
+<li><p>ModelAndView</p>
+<ul>
+<li>用于返回数据和视图，对视图执行forward</li>
+</ul>
+</li>
+<li><p>String</p>
+<ul>
+<li><p>用于跳转页面</p>
+</li>
+<li><p>表示视图，可以用逻辑名称和完整视图路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">doNayuki</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;result&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
 
             </div>
             
@@ -189,7 +219,7 @@
     <script type="text/javascript">
         $(()=>{
             new QRCode("wechat-qr", {
-                text: "https://wochiyao.github.io/2021/01/26/vscodebackground/",
+                text: "https://wochiyao.github.io/2021/03/17/springmvc-2/",
                 width: 150,
                 height: 150,
                 correctLevel : QRCode.CorrectLevel.H
@@ -201,9 +231,12 @@
             const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
             const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
             const twitterBase   = "https://twitter.com/intent/tweet?";
-            const hostUrl       = "https://wochiyao.github.io/2021/01/26/vscodebackground/";
-            const title         = "「如何为vscode全局添加背景图片？」";
-            const excerpt       = `本方法针对插件不生效的人，缺点是文字也会随透明度而改变。`;
+            const hostUrl       = "https://wochiyao.github.io/2021/03/17/springmvc-2/";
+            const title         = "「springmvc基础（2）」";
+            const excerpt       = `RequestParam的使用
+用于请求参数名和方法参数名不一样时
+
+1public ModelAndView doNayuki(@RequestParam(&quot;rname&quot;) String name,@Reques...`;
             let _URL;
             switch (dest) {
                 case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
@@ -225,7 +258,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-01-26</span>
+                    <span>最后编辑：2021-03-17</span>
                     </div>
                 </div>
             </footer>
@@ -234,12 +267,12 @@
             <nav class="navigation post-navigation clearfix" role="navigation">
                 
                 <div class="nav-previous clearfix">
-                    <a title=" 如何为vs2019设置代码颜色搭配?" href="/2021/01/26/vs2019font/">&lt; 上一篇</a>
+                    <a title=" springmvc基础（1）" href="/2021/03/15/springmvc-1/">&lt; 上一篇</a>
                 </div>
                 
                 
                 <div class="nav-next clearfix">
-                    <a title=" Bean管理（1）" href="/2021/01/26/spring5-bean1/">下一篇 &gt;</a>
+                    <a title=" sbqyh" href="/2021/03/23/sbqyh/">下一篇 &gt;</a>
                 </div>
                 
             </nav>
