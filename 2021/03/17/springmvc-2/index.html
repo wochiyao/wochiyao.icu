@@ -24,7 +24,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wochiyao.github.io/null">
 <meta property="article:published_time" content="2021-03-17T02:43:59.386Z">
-<meta property="article:modified_time" content="2021-03-17T03:06:43.349Z">
+<meta property="article:modified_time" content="2021-03-27T06:26:11.653Z">
 <meta property="article:author" content="Nayuki">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wochiyao.github.io/null">
@@ -121,7 +121,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            1033
+                            ~2.34K
                         
                         字
                         
@@ -130,7 +130,7 @@
             </header>
             <div class="kratos-post-content">
                 <div id="expire-alert" class="alert alert-warning hidden" role="alert">
-                    本文最后编辑于 <time datetime="1615950403349"></time> 前，其中的内容可能需要更新。
+                    本文最后编辑于 <time datetime="1616826371653"></time> 前，其中的内容可能需要更新。
                 </div>
                 
                 <hr />
@@ -165,7 +165,82 @@
 <li><p>用于跳转页面</p>
 </li>
 <li><p>表示视图，可以用逻辑名称和完整视图路径</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">doNayuki</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;result&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">doNayuki</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;result&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>若有@ResponseBody，则表示返回的是数据</p>
+</li>
+</ul>
+</li>
+<li><p>void</p>
+<ul>
+<li>处理ajax时，用void返回值</li>
+<li>响应json格式</li>
+</ul>
+</li>
+<li><p>Object</p>
+<ul>
+<li><p>用于返回数据</p>
+</li>
+<li><p>例如返回值为Student类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Student <span class="title">doStudent</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Student student = <span class="keyword">new</span> Student();</span><br><span class="line">    student.setName(<span class="string">&quot;Nayuki&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> student;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="静态资源问题"><a href="#静态资源问题" class="headerlink" title="静态资源问题"></a>静态资源问题</h2><ul>
+<li><p>当接收的请求为/时，中央调度器无法处理静态资源的请求</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>当接收的请求为/时，替代了tomcat的defaultServlet</p>
+</li>
+<li><p>解决方法</p>
+<ul>
+<li><p>在配置文件中使用mvc:default-servlet-handler</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:default-servlet-handler</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>冲突问题：上面的代码和@RequestMapping有冲突，需要加入下面的代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>在配置文件中使用mvc:resources</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:resources</span> <span class="attr">mapping</span>=<span class="string">&quot;/images/**&quot;</span> <span class="attr">location</span>=<span class="string">&quot;/images/&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>冲突问题：上面的代码和@RequestMapping有冲突，需要加入下面的代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mvc:annotation-driven</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="地址分类"><a href="#地址分类" class="headerlink" title="地址分类"></a>地址分类</h2><ul>
+<li><p>绝对地址</p>
+</li>
+<li><p>相对地址</p>
+<ul>
+<li><p>访问地址加”/“</p>
+</li>
+<li><p>服务器ip+协议号+访问地址</p>
+</li>
+<li><p>若使用相对地址来当请求的地址，则可使用下面的代码</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;$&#123;pageContext.request.contextPath&#125;/user/Nayuki.do&quot;&gt;发起Nayuki.do请求&lt;/a&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>参考地址</p>
+<ul>
+<li><p>访问地址不加”/“</p>
+</li>
+<li><p>当前页面地址+访问地址</p>
+</li>
+<li><p>解决当前页面地址混乱问题</p>
+<ul>
+<li><p>使用base标签设定基地址，最终地址为基地址+访问地址</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">&quot;http://localhost:8080/springmvc/&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">	String basePath= request.getScheme()+<span class="string">&quot;://&quot;</span>+request.getServerName()+<span class="string">&quot;:&quot;</span>+request.getServerPort()+request.getContextPath()+<span class="string">&quot;/&quot;</span>;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;base href=<span class="string">&quot;&lt;%=basePath%&gt;&quot;</span>/&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ul>
 </li>
@@ -258,7 +333,7 @@
                         
                     </div>
                     <div class="pull-date">
-                    <span>最后编辑：2021-03-17</span>
+                    <span>最后编辑：2021-03-27</span>
                     </div>
                 </div>
             </footer>
@@ -270,10 +345,6 @@
                     <a title=" springmvc基础（1）" href="/2021/03/15/springmvc-1/">&lt; 上一篇</a>
                 </div>
                 
-                
-                <div class="nav-next clearfix">
-                    <a title=" 哈哈哈哈哈哈" href="/2021/03/23/sbqyh/">下一篇 &gt;</a>
-                </div>
                 
             </nav>
         
@@ -304,7 +375,7 @@
                     
   <aside id="krw-categories" class="widget widget-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIY/">DIY</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/springmvc/">springmvc</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%82%B1%E8%BF%9C%E8%B1%AA/">邱远豪</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DIY/">DIY</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Spring/">Spring</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/mybatis/">mybatis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/springmvc/">springmvc</a><span class="category-list-count">2</span></li></ul>
   </aside>
 
 
@@ -317,12 +388,6 @@
   <div class="tab-content">
       <ul class="list-group">
         
-        
-          
-          
-            <a class="list-group-item" href="/2021/03/23/sbqyh/"><i class="fa  fa-book"></i> 哈哈哈哈哈哈</a>
-            
-          
         
           
           
@@ -349,7 +414,11 @@
           
         
           
+          
+            <a class="list-group-item" href="/2021/02/07/spring5-jdbctemplate/"><i class="fa  fa-book"></i> JdbcTemplate的使用</a>
             
+          
+        
           
             
           
